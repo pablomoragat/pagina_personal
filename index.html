@@ -44,7 +44,7 @@ header{position:sticky;top:0;z-index:100;width:100%;height:88px;margin:0;padding
 <div class="demo-dialog">
 <div class="demo-topbar"><h4 class="demo-title" id="demo-title">Agente IA · Resultados y demostración</h4><button class="demo-close" id="close-demo" type="button" aria-label="Cerrar demostración">×</button></div>
 <div class="demo-stage"><img class="demo-slide" id="demo-slide" src="assets/demo-agente/slide-01.svg" alt="Paso 1: pregunta de negocio"><button class="demo-arrow demo-prev" id="demo-prev" type="button" aria-label="Lámina anterior">‹</button><button class="demo-arrow demo-next" id="demo-next" type="button" aria-label="Lámina siguiente">›</button></div>
-<div class="demo-footer"><span><span class="demo-counter-current" id="demo-current">1</span> de 6</span></div>
+<div class="demo-footer"><span><span class="demo-counter-current" id="demo-current">1</span> de 5</span></div>
 </div></div>
 <footer><p>© 2026 Pablo Moraga</p><a href="#inicio">Volver arriba ↑</a></footer>
 <script>
@@ -59,11 +59,10 @@ const slideSources=[
 'assets/demo-agente/slide-03.svg',
 'assets/demo-agente/slide-04.svg',
 'assets/demo-agente/slide-05.svg',
-'assets/demo-agente/slide-06.svg'
 ];
-const slideAlt=['Paso 1: pregunta de negocio','Paso 2: datos seleccionados para responder','Paso 3: árbol de resultados','Paso 3: conclusión del análisis','Trazabilidad del proceso','Paso 5: potencial de la solución'];
+const slideAlt=['Paso 1: pregunta de negocio','Paso 2: datos dentro de la empresa','Paso 3: resultado y lectura ejecutiva','Paso 4: trazabilidad del proceso','Paso 5: del diagnóstico a la decisión'];
 let currentSlide=1;
-function showSlide(number){currentSlide=Math.max(1,Math.min(6,number));demoSlide.src=slideSources[currentSlide-1];demoSlide.alt=slideAlt[currentSlide-1];demoCurrent.textContent=currentSlide;demoPrev.disabled=currentSlide===1;demoNext.disabled=currentSlide===6;}
+function showSlide(number){currentSlide=Math.max(1,Math.min(5,number));demoSlide.src=slideSources[currentSlide-1];demoSlide.alt=slideAlt[currentSlide-1];demoCurrent.textContent=currentSlide;demoPrev.disabled=currentSlide===1;demoNext.disabled=currentSlide===5;}
 function openDemo(){showSlide(1);demoModal.classList.add('is-open');demoModal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');document.getElementById('close-demo').focus();}
 function closeDemo(){demoModal.classList.remove('is-open');demoModal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');document.getElementById('open-demo').focus();}
 document.getElementById('open-demo').addEventListener('click',openDemo);
